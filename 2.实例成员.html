@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 实例成员：在构造函数内部通过this添加的成员称为实例成员，只能通过实例化的对象来访问
+        // uname age
+        // 静态成员：在构造函数本身上添加的成员称为静态成员，只能有构造函数本身来访问。
+        // Star.sex = '女';
+        // console.log(Star.sex);
+
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            this.sing = function() {
+                console.log('我喜欢唱歌');
+            }
+
+        };
+        Star.sex = '女';
+        var dlrb = new Star('迪丽热巴', 20);
+        // console.log(dlrb.uname);
+        // console.log(dlrb.age);
+        // console.log(dlrb.sex);
+        // console.log(Star.uname);
+        // console.log(Star.sex);
+        var ldh = new Star('刘德华', 50);
+        dlrb.sing();
+        ldh.sing();
+        console.log(dlrb.sing() === ldh.sing());
+    </script>
+
+</body>
+
+</html>

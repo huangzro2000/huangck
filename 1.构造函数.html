@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+            this.sing = function() {
+                console.log('我喜欢唱歌');
+            }
+
+        };
+        var dlrb = new Star('迪丽热巴', 20);
+        // console.log(dlrb.uname);
+        console.log(Star.uname);
+        // dlrb.sing();
+        var ldh = new Star('刘德华', 50);
+        // console.log(ldh.uname);
+    </script>
+
+</body>
+
+</html>
