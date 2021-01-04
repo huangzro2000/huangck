@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //普通函数   this指向 Window
+        function fn() {
+            console.log('111');
+            console.log(this);
+        }
+        fn();
+
+
+        //对象函数  this指向 obj
+        var o = {
+            ff: function() {
+                console.log('222');
+                console.log(this);
+            }
+        };
+        o.ff();
+
+
+
+        //构造函数 this指向 实例对象
+        function Hz(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+        var hz = new Hz('刘德华', 18)
+        console.log(hz.name)
+
+
+        //绑定函数 this指向 绑定事件的元素
+        document.onclick = function() {
+            console.log('444');
+            console.log(this);
+        }
+
+        //定时器函数  this指向 Window
+        setInterval(function() {
+            console.log('555');
+            console.log(this);
+
+        }, 3000);
+
+
+        //立即执行函数   this指向 Window
+        (function() {
+            console.log(666);
+            console.log(this);
+        })()
+    </script>
+</body>
+
+</html>

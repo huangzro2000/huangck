@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=l.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+        <li>太阳</li>
+        <li>月亮</li>
+        <li>火星</li>
+        <li>海王星</li>
+    </ul>
+
+</body>
+<script>
+    var lis = document.querySelectorAll('li');
+    // for (var i = 0; i < lis.length; i++) {
+    //     lis[i].index = i;
+    //     lis[i].onclick = function() {
+    //         console.log(this.index);
+    //     }
+    // }
+
+
+    //闭包方法
+    // for (var i = 0; i < lis.length; i++) {
+    //     (function(i) {
+    //         lis[i].onclick = function() {
+    //             console.log(i);
+    //         }
+    //     })(i)
+    // }
+
+
+    for (var i = 0; i < lis.length; i++) {
+        (function(i) {
+            setTimeout(function() {
+                console.log(lis[i].innerText)
+            }, 3000)
+        })(i)
+    }
+</script>
+
+</html>

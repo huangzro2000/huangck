@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Star(uname, age) {
+            this.uname = uname;
+            this.age = age;
+        };
+        // prototype 是每一个构造函数里面都有属性  因为它指向的是一个对象  我们又称之为原型对象
+        //把我们可以把那些不变的方法，直接定义在 prototype 对象上，这样所有对象的实例就可以共享这些方法。
+        Star.prototype.sing = function() {
+            console.log('我喜欢唱歌');
+        }
+
+        var dlrb = new Star('迪丽热巴', 20);
+        var ldh = new Star('刘德华', 50);
+        // 为什么刘德华实例多少能调用我们的这个sing();
+        dlrb.sing();
+        // 刘德华 这个实例对象身上 有一个 __proto__这个属性  实例对象 --原型
+        // 这个属性指向的是构函数书的原型对象
+        // 原型对象身上有这个sing().所以刘德华这个实例对象能调用我们sing();
+        console.log(dlrb);
+    </script>
+</body>
+
+</html>
