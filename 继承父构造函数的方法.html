@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Father(name, age) {
+            this.name = name;
+            this.age = age;
+
+        }
+        Father.prototype.money = function() {
+            console.log('黄智的1000万');
+        }
+
+        function Son(name, age) {
+            Father.call(this, name, age);
+        }
+        Son.prototype = new Father();
+        var ldh = new Son('刘德华', 30);
+        // ldh.money()
+        console.log(ldh)
+    </script>
+</body>
+
+</html>
